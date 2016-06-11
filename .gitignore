@@ -30,3 +30,6 @@ proguard/
 
 .gradle
 build
+
+#Vuforia key
+app/src/main/res/values/vuforia_key.xml

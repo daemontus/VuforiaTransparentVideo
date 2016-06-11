@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qualcomm.vuforia.samples.VideoPlayback"
+    package="com.vuforia.samples.VideoPlayback"
     android:versionCode="200"
-    android:versionName="2.8">
+    android:versionName="5.0">
 
     <!--
         The application's compatibility with one or more versions of the Android
@@ -11,7 +11,7 @@
         android:minSdkVersion = application's required minimum API level to run
         android:targetSdkVersion = application's targeted API level
     -->
-    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="18" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="22" />
 
     <uses-feature android:glEsVersion="0x00020000" />
 
@@ -47,7 +47,8 @@
      -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    
     <!--
       NOTE: The setting 'android:launchMode="singleTask"' makes sure
       that the activity can begin only one task and the device can hold only
