@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+def VUFORIA_SDK_DIR = '/Users/daemontus/Library/Vuforia'
+def NATIVE_LIB_DIR = 'build/lib'
+def JAR_DIR = 'build/java/vuforia'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir "$VUFORIA_SDK_DIR/$NATIVE_LIB_DIR/"
+    }
+
+    defaultConfig {
+        applicationId "com.vuforia.samples.VideoPlayback"
+        minSdkVersion 8
+        targetSdkVersion 22
+        versionCode 200
+        versionName "5.0"
+    }
+	
+    archivesBaseName = rootProject.projectDir.getName()
+	
+    buildTypes {
+        release {
+            minifyEnabled false
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+    }
+}
+
+dependencies {
+    compile files("$VUFORIA_SDK_DIR/$JAR_DIR/Vuforia.jar")
+}
